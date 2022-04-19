@@ -8,6 +8,7 @@
 int snakex=width/2, snakey=length/2;
 int gameover, flag;
 int foodx,foody,score=0;
+
 void food()
 {
   label1:
@@ -63,13 +64,13 @@ void boundary()
        }
        printf("\n");
    }
-   printf("w->up\ns->down\na->left\nd->right\nx->quit\nPress desired key:");
+   printf("#->food\n0->snake\nKeys:\nw->up\ns->down\na->left\nd->right\nx->quit\nPress desired key:");
 }
+
 void move()
 {
    if(kbhit)
    {
-       
        switch (_getch())
        {
        case 'w':
@@ -124,5 +125,4 @@ int main()
         printf("\nYou bumped into the wall and died *()*\nScore=%d\n",score);
     }
     return 0;
-
 }
