@@ -73,59 +73,30 @@ void move()
        switch (_getch())
        {
        case 'w':
-           flag=1;
+           snakey--;
            break;
 
         case 'a':
-           flag=2;
+           snakex--;
            break;
 
         case 's':
-           flag=3;
+           snakey++;
            break;
 
         case 'd':
-           flag=4;
+           snakex++;
            break;
 
         case 'x':
-           flag=5;
+           gameover=1;
            break;
 
        default:
            break;
        }
    }
-}
-void logic()
-{
-    switch (flag)
-    {
-    case 1:
-        snakey--;
-        flag=0;
-        break;
-
-    case 2:
-        snakex--;
-        flag=0;
-        break;
-
-    case 3:
-        snakey++;
-        flag=0;
-        break;
-
-    case 4:
-        snakex++;
-        flag=0;
-        break;
-
-    case 5:
-       gameover=1;
-       break;
-    }
-    if(snakex==foodx&&snakey==foody)
+   if(snakex==foodx&&snakey==foody)
     {
         score+=10;
         food();
@@ -137,14 +108,12 @@ void logic()
     }
 }
 
-
 int main()
 { 
     food();
     while(gameover==0){
     boundary();
     move();
-    logic();
     }
     if(gameover==1)
     {
