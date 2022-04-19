@@ -6,7 +6,7 @@
 #define width 20
 #define length 20
 int snakex=width/2, snakey=length/2;
-int gameover, flag;
+int gameover;
 int foodx,foody,score=0;
 
 void food()
